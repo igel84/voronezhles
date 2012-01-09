@@ -19,12 +19,17 @@ group :assets do
 end
 
 gem 'jquery-rails'
+#gem "ckeditor", "3.7.0.rc1"
+gem "ckeditor", :git => "git://github.com/galetahub/ckeditor.git"
+gem "paperclip"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use unicorn as the web server
 gem 'unicorn'
+
+gem 'mongrel', '1.2.0.pre2'
 
 # Deploy with Capistrano
 # gem 'capistrano'

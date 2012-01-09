@@ -1,5 +1,14 @@
 InitialRelease::Application.routes.draw do
+
+  mount Ckeditor::Engine => '/ckeditor'
+
+	match 'admin' => "authentication#index"
+  match 'login' => "authentication#login"
+  match 'logout' => "authentication#logout"
+
   resources :pages
+
+  root :to => "pages#main"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

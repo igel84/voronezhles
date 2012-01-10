@@ -22,6 +22,7 @@ gem 'jquery-rails'
 #gem "ckeditor", "3.7.0.rc1"
 gem "ckeditor", :git => "git://github.com/galetahub/ckeditor.git"
 gem "paperclip"
+gem 'haml'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

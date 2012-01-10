@@ -6,7 +6,11 @@ InitialRelease::Application.routes.draw do
   match 'login' => "authentication#login"
   match 'logout' => "authentication#logout"
 
+	match 'construction' => "pages#index", :as => 'construction'
+	match 'add_image' => "projects#add_image", :as => 'add_image_proj'
+
   resources :pages
+	resources :projects
 
   root :to => "pages#main"
 

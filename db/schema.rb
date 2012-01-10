@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120107032017) do
+ActiveRecord::Schema.define(:version => 20120110113601) do
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false
@@ -27,11 +27,32 @@ ActiveRecord::Schema.define(:version => 20120107032017) do
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "idx_ckeditor_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
 
+  create_table "images", :force => true do |t|
+    t.string   "name"
+    t.boolean  "main",               :default => false
+    t.integer  "project_id"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "pages", :force => true do |t|
     t.string   "name"
     t.string   "title"
     t.string   "hiperlink"
     t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "projects", :force => true do |t|
+    t.string   "name"
+    t.text     "info",       :default => ""
+    t.text     "body",       :default => ""
+    t.integer  "price",      :default => 0
+    t.integer  "area",       :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

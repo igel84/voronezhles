@@ -8,7 +8,7 @@ body {
 	background-color: #ededed;
 	}
 
-a:link, a:visited { color: #006600; text-decoration: none; } 
+a:link, a:visited { color: #006600; text-decoration: none; }
 
 a:active, a:hover { color: #CC0000; text-decoration: none; }
 
@@ -47,12 +47,20 @@ h2 {
 #welcomesection {
 	float: left;
 	width: 900px;
+	img {
+		float: left;
+		padding-right: 10px;
 	}
-
-#welcomesection img {
-	float: left;
-	padding-right: 10px;
+	ul { margin: 40px 0 40px 0; }
+	li {
+		font-size: 16px;
+		a {
+			color: #585858;
+			text-decoration: none;
+			&:hover { border-bottom: solid 1px #585858; }
+		}
 	}
+}
 
 .topmenu{
 	float: right;

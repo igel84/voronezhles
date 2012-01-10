@@ -1,6 +1,6 @@
 #encoding: utf-8
 class PagesController < ApplicationController
-  before_filter :authorize, :except => [:show, :main]
+  before_filter :authorize, :except => [:show, :main, :index]
   # GET /pages
   # GET /pages.json
   def index

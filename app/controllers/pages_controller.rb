@@ -4,7 +4,11 @@ class PagesController < ApplicationController
   # GET /pages
   # GET /pages.json
   def index
-    @pages = Page.all
+    if admin?
+	    @pages = Page.all
+		else
+			@pages = Page.where(:visible=>true)
+		end
 
     respond_to do |format|
       format.html # index.html.erb

@@ -70,15 +70,15 @@ h2 {
 		@include border-radius(25px);
 		display: block;
 		float: left;
-		margin-right: 40px;
+		margin-left: 60px;
 		margin-bottom: 40px;
 		border: solid 1px #fff;
 		width: 180px;
-		height: 200px;
+		height: 220px;
 		padding: 10px;
 		text-decoration: none;
 		&:hover {
-			border: solid 1px lighten(#060, 70%); //#ccc;
+			border: solid 1px lighten(#060, 65%); //#ccc;
 		}
 		img.proj-img {
 			display: block;
@@ -230,11 +230,10 @@ h2 {
 	width: 62px;
 	padding: 8px 0px 0px 20px;
 	font-weight: bold;
+	a {
+		color: #FFFFFF;
 	}
-
-.morebutton1 a {
-	color: #FFFFFF;
-	}
+}
 
 .morebutton2 {
 	float: right;
@@ -243,12 +242,25 @@ h2 {
 	height: 28px;
 	font-size: 10px;
 	padding: 5px 0px 0px 10px;
+	a {
+		font-weight: bold;
+		color: #FFFFFF;
 	}
+}
 
-.morebutton2 a {
+.morebutton3 {
+	background: url(images/morebutton3.jpg) no-repeat;
+	font-size: 11px;
+	height: 51px;
+	width: 150px;
+	padding-top: 5px;
+	padding-left: 15px;
 	font-weight: bold;
-	color: #FFFFFF;
+	text-align: left;
+	a {
+		color: #FFFFFF;
 	}
+}
 
 .clear {
 	clear: both;

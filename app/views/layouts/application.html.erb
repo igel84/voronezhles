@@ -17,8 +17,8 @@
         <li><%= link_to "ГЛАВНАЯ", :root %></li>
         <li><%= link_to "ПРОЕКТЫ", projects_path %></li>
         <li><%= link_to "СТРОИТЕЛЬСТВО", construction_path %></li>
-        <li><a href="http://www.css-school.ru/">ЦЕНЫ</a></li>
-        <li><a href="http://www.css-school.ru/" style="background: none; padding-right: 0px;">КОНТАКТЫ</a></li>
+        <li><%= link_to "ЦЕНЫ", Page.find_by_name('price') %></li>
+        <li><%= link_to "КОНТАКТЫ", Page.find_by_name('kontact') %></li>
         <% if admin? %>
 	        <li style="float:right;"><%= link_to "выйти", :logout, :style=>"padding-left: 0px; padding-right: 0px; background: none;" %></li>
 	      <% end %>

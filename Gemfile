@@ -8,7 +8,7 @@ gem 'rails', '3.1.1'
 gem 'sqlite3'
 gem 'execjs'
 gem 'therubyracer'
-gem 'rake', '0.9.2'
+#gem 'rake', '0.9.2'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -31,11 +31,12 @@ gem 'haml'
 # Use unicorn as the web server
 gem 'unicorn'
 
-gem 'mongrel', '1.2.0.pre2'
+#gem 'mongrel', '1.2.0.pre2'
 
 # Deploy with Capistrano
-# gem 'capistrano'
-
+gem 'capistrano'
+gem 'russian', '0.6.0'
+gem 'thin'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 

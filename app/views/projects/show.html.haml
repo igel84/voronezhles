@@ -3,7 +3,8 @@
 = link_to 'Back', projects_path if admin?
 .img-list{:style=>"float:left; width:320px;"}
 	- @project.images.each do |image|
-		= image_tag image.photo.url(:small), :style=>"margin:10px auto;"
+		= link_to image.photo.url, :target=>"_blank" do
+			= image_tag image.photo.url(:small), :style=>"margin:10px auto;"
 .boxright
 	.box_left
 	.box_middle{:style=>'width:420px; height:420px;'}

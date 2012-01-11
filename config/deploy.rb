@@ -1,3 +1,4 @@
+require "bundler/capistrano"
 # У вас должна быть настроена авторизация ssh по сертификатам
 
 set :application, "voronezhles"

@@ -11,7 +11,7 @@ InitialRelease::Application.routes.draw do
 	match 'del_image' => "projects#del_image", :as => 'del_image_proj'
 	match 'main_image' => "projects#main_image", :as => 'main_image_proj'
 
-  resources :pages
+	resources :pages
 	resources :projects
 
   root :to => "pages#main"

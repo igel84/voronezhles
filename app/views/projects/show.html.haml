@@ -1,0 +1,17 @@
+%h1= @project.name
+= link_to 'Edit', edit_project_path(@project) if admin?
+= link_to 'Back', projects_path if admin?
+.img-list{:style=>"float:left; width:320px;"}
+	- @project.images.each do |image|
+		= image_tag image.photo.url(:small), :style=>"margin:10px auto;"
+.boxright
+	.box_left
+	.box_middle{:style=>'width:420px; height:420px;'}
+		%p{:style=>'font-weight:bold;font-size:15px;padding-top:20px;padding-left:20px;'}!= @project.info
+		%br/
+		%p!= @project.body
+		.morebutton3
+			= link_to 'вернуться к списку проектов', projects_path
+	.box_right
+.clear
+%br/

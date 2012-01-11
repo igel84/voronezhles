@@ -42,6 +42,7 @@ module InitialRelease
 
     # Enable the asset pipeline
     config.assets.enabled = true
+    #config.generators.stylesheet_engine = :sass
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'

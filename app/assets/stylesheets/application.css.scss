@@ -1,3 +1,9 @@
+@import "compass";
+//@import "compass/css3.sass";
+//@import "compass/utilities";
+//@import "compass/reset.scss";
+//@import "compass/layout.scss";
+
 body {
 	margin: 0;
 	padding:0;
@@ -60,11 +66,48 @@ h2 {
 			&:hover { border-bottom: solid 1px #585858; }
 		}
 	}
+	a.rowbottom {
+		@include border-radius(25px);
+		display: block;
+		float: left;
+		margin-right: 40px;
+		margin-bottom: 40px;
+		border: solid 1px #fff;
+		width: 180px;
+		height: 200px;
+		padding: 10px;
+		text-decoration: none;
+		&:hover {
+			border: solid 1px lighten(#060, 70%); //#ccc;
+		}
+		img.proj-img {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			//width: 120px;
+			float: none;
+		}
+		.proj-name {
+			padding: 20px 0 5px 0;
+			text-align: center;
+			font-size: 14px;
+			font-weight: bold;
+			color: #38713a;
+		}
+		.proj-info {
+			margin: 0;
+			padding: 5px 0 5px 0;
+			text-align: center;
+			font-size: 12px;
+			//font-weight: bold;
+			color: #684125;
+		}
+	}
 }
 
 .topmenu{
 	float: right;
-	width: 580px;
+	width: 585px;
 	padding-right: 20px;
 	}
 
@@ -76,7 +119,9 @@ h2 {
 
 .topmenu li{
 	display: inline ;
-	}
+	padding: 0px;
+	margin: 0px;
+}
 
 .topmenu li a{
 	float: left;
@@ -84,13 +129,15 @@ h2 {
 	font-size: 11px;
 	font-weight: bold;
 	color: #fff;
-	margin-right:12px;
-	margin-left:11px;
+	//margin-right:12px;
+	//margin-left:20px;
 	//width: 90px;
+	margin:0;
 	height: 30px;
-	padding: 14px 0px 0px 5px;
+	padding: 16px 22px 0px 20px;
 	//border-right: solid 1px red;
-	}
+	background: url(images/top-line.png) right top no-repeat;
+}
 
 .topmenu li a:hover{
 	color: #91e30c;
@@ -202,3 +249,7 @@ h2 {
 	font-weight: bold;
 	color: #FFFFFF;
 	}
+
+.clear {
+	clear: both;
+}

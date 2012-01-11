@@ -5,6 +5,8 @@
   <%= stylesheet_link_tag    "application" %>
  	<%= javascript_include_tag "application" %>
  	<%= javascript_include_tag "/javascripts/ckeditor/ckeditor.js" if admin? %>
+ 	<%= javascript_include_tag "/javascripts/jquery.form.js" if admin? %>
+ 	<%= javascript_include_tag "/javascripts/photo.js" if admin? %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -13,12 +15,12 @@
     <div class="topmenu">
       <ul>
         <li><%= link_to "ГЛАВНАЯ", :root %></li>
-        <li><a href="http://www.css-school.ru/">ПРОЕКТЫ</a></li>
+        <li><%= link_to "ПРОЕКТЫ", projects_path %></li>
         <li><%= link_to "СТРОИТЕЛЬСТВО", construction_path %></li>
         <li><a href="http://www.css-school.ru/">ЦЕНЫ</a></li>
-        <li><a href="http://www.css-school.ru/">КОНТАКТЫ</a></li>
+        <li><a href="http://www.css-school.ru/" style="background: none; padding-right: 0px;">КОНТАКТЫ</a></li>
         <% if admin? %>
-	        <li style="float:right"><%= link_to "выйти", :logout %></li>
+	        <li style="float:right;"><%= link_to "выйти", :logout, :style=>"padding-left: 0px; padding-right: 0px; background: none;" %></li>
 	      <% end %>
       </ul>
     </div>

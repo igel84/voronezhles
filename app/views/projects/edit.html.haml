@@ -1,9 +1,11 @@
 %h1 Редактирование проекта
 = render 'form'
-= form_tag(add_image_proj_path, :multipart => true ) do
+#divtoupdate
+	= render 'imagelist'
+= form_tag(add_image_proj_path, :multipart => true, :id => 'myForm' ) do
 	= hidden_field_tag :project_id, @project.id
 	%input{:type=>'file', :name=>'photos[]'}
-	%input{:type=>'file', :name=>'photos[]'}
+	%br/
 	= submit_tag 'добавить файл'
 = link_to 'Show', @project
 = link_to 'Back', projects_path

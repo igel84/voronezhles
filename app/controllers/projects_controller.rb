@@ -1,6 +1,5 @@
 class ProjectsController < ApplicationController
-  # GET /projects
-  # GET /projects.json
+	before_filter :authorize, :except => [:show, :index]
 
   def add_image
   	@project = Project.find(params[:project_id])
@@ -11,7 +10,20 @@ class ProjectsController < ApplicationController
 			end
 			@project.save
 		end
-  	redirect_to @project
+  	#redirect_to @project
+  	render :partial => 'imagelist'
+  end
+
+  def del_image
+  	@project = Project.find(params[:proj_id])
+  	Image.find(params[:image_id]).destroy
+		render 'edit'
+  end
+
+  def main_image
+  	@project = Project.find(params[:proj_id])
+  	Image.find(params[:image_id]).set_main
+  	render 'edit'
   end
 
   def index

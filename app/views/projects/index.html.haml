@@ -1,0 +1,8 @@
+%h1 Проекты
+- @projects.each do |pr|
+	= link_to(project_path(pr), :class=>'rowbottom') do
+		= image_tag Image.favorite(pr.id).photo.url(:thumb), :class => 'proj-img' if pr.images != []
+		.proj-name= truncate(pr.name, :length=>20, :ommission=>'...')
+		.proj-info!= pr.info
+		.clear
+= link_to 'New Project', new_project_path if admin?

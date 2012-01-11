@@ -1,0 +1,8 @@
+- @project.images.each do |image|
+	= image_tag image.photo.url(:thumb)
+	= link_to main_image_proj_path(:proj_id=>@project.id, :image_id=>image.id) do
+		= image_tag(image.main == true ? 'images/favorite.png' : 'images/nonfavorite.png', :style=>"margin-left:-70px;margin-top:8px;")
+	= link_to del_image_proj_path(:proj_id=>@project.id, :image_id=>image.id) do
+		= image_tag 'images/del.png', :style=>"margin-left:-40px;margin-top:8px;"
+.clear
+%br/

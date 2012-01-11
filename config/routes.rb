@@ -8,6 +8,8 @@ InitialRelease::Application.routes.draw do
 
 	match 'construction' => "pages#index", :as => 'construction'
 	match 'add_image' => "projects#add_image", :as => 'add_image_proj'
+	match 'del_image' => "projects#del_image", :as => 'del_image_proj'
+	match 'main_image' => "projects#main_image", :as => 'main_image_proj'
 
   resources :pages
 	resources :projects

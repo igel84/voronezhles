@@ -8,7 +8,7 @@ CKEDITOR.editorConfig = function( config )
 	// Define changes to default configuration here. For example:
 	// config.language = 'fr';
 	// config.uiColor = '#AADC6E';
-	
+
   /* Filebrowser routes */
   // The location of an external file browser, that should be launched when "Browse Server" button is pressed.
   config.filebrowserBrowseUrl = "/ckeditor/attachment_files";
@@ -18,7 +18,7 @@ CKEDITOR.editorConfig = function( config )
 
   // The location of a script that handles file uploads in the Flash dialog.
   config.filebrowserFlashUploadUrl = "/ckeditor/attachment_files";
-  
+
   // The location of an external file browser, that should be launched when "Browse Server" button is pressed in the Link tab of Image dialog.
   config.filebrowserImageBrowseLinkUrl = "/ckeditor/pictures";
 
@@ -27,30 +27,30 @@ CKEDITOR.editorConfig = function( config )
 
   // The location of a script that handles file uploads in the Image dialog.
   config.filebrowserImageUploadUrl = "/ckeditor/pictures";
-  
+
   // The location of a script that handles file uploads.
   config.filebrowserUploadUrl = "/ckeditor/attachment_files";
-  
+
   // Rails CSRF token
   config.filebrowserParams = function(){
     var csrf_token = jQuery('meta[name=csrf-token]').attr('content'),
         csrf_param = jQuery('meta[name=csrf-param]').attr('content'),
         params = new Object();
-    
+
     if (csrf_param !== undefined && csrf_token !== undefined) {
       params[csrf_param] = csrf_token;
     }
-    
+
     return params;
   };
-  
+
   /* Extra plugins */
   // works only with en, ru, uk locales
   config.extraPlugins = "embed,attachment";
-  
+
   /* Toolbars */
   config.toolbar = 'Easy';
-  
+
   config.toolbar_Easy =
     [
         ['Source','-','Preview'],
@@ -62,4 +62,19 @@ CKEDITOR.editorConfig = function( config )
         ['Link','Unlink','Anchor'], ['Image', 'Attachment', 'Flash', 'Embed'],
         ['Table','HorizontalRule','Smiley','SpecialChar','PageBreak']
     ];
+
+	// 'Font' - выбор шрифта
+	// '/' - перенос на новую строку
+	// '-' - разделитель между кнопками
+  config.toolbar = 'MyToolbar';
+
+	config.toolbar_MyToolbar =
+	[
+		{ name: 'basicstyles', items : [ 'Bold','Italic','Underline','Strike','-','RemoveFormat','FontSize' ] },
+		{ name: 'colors', items : [ 'TextColor','BGColor' ] },
+		{ name: 'insert', items : [ 'Image','Table','HorizontalRule','Link' ] },
+    { name: 'paragraph', items : [ 'NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock' ] },
+		{ name: 'tools', items : [ 'Maximize','Source'] }
+	];
+
 };

@@ -12,26 +12,26 @@
   <% end %>
 
 	<div class="field">
-    <%= f.label :visible %><br />
-    <%= f.check_box :visible %>
+    <%= f.label "Visible in list" %><%= f.check_box :visible %>
   </div>
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :style=>"width:785px" %>
   </div>
   <div class="field">
     <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :style=>"width:785px" %>
   </div>
   <div class="field">
     <%= f.label :hiperlink %><br />
-    <%= f.text_field :hiperlink %>
+    <%= f.text_field :hiperlink, :style=>"width:785px" %>
   </div>
   <div class="field">
     <%= f.label :body %><br />
     <%= cktext_area_tag("page[body]", @page.body, :input_html => {:cols => 10, :rows => 20}, :toolbar => 'MyToolbar') %>
   </div>
-  <div class="actions">
+  <br />
+  <div class="actions" style="text-align:right">
     <%= f.submit %>
   </div>
 <% end %>

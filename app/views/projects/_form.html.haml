@@ -2,7 +2,7 @@
 	.field
 		= f.label :name
 		%br/
-		= f.text_field :name
+		= f.text_field :name, :style=>"width:795px"
 	.field{:style=>'float:left;'}
 		= f.label :info
 		%br/
@@ -10,18 +10,18 @@
 	.field{:style=>'float:right;'}
 		= f.label :body
 		%br/
-		= f.text_area :body
+		= cktext_area_tag("project[body]", @project.body, :width=> 400, :toolbar => 'MyToolbar')# f.text_area :body
 	.clear
-	.field{:style=>'float:left;'}
-		= f.label :price
-		%br/
-		= f.number_field :price
-	.field{:style=>'float:left;'}
-		= f.label :area
-		%br/
-		= f.number_field :area
+	-#.field{:style=>'float:left;'}
+	-#	= f.label :price
+	-#	%br/
+	-#	= f.number_field :price
+	-#.field{:style=>'float:left;'}
+	-#	= f.label :area
+	-#	%br/
+	-#	= f.number_field :area
 	.actions{:style=>'float:right;'}
 		%br/
-		= f.submit 'сохранить'
+		= f.submit
 	.clear
 	%br/

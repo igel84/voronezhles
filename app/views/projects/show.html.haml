@@ -11,7 +11,7 @@
 .boxright
 	.box_left
 	.box_middle{:style=>'width:420px; height:420px;'}
-		%p{:style=>'font-weight:bold;font-size:15px;padding-top:20px;padding-left:20px;'}!= @project.info
+		%p{:style=>'font-weight:bold;font-size:15px;padding-top:20px;padding-left:20px;'}!= @project.info.gsub("\r\n", "<br />")
 		%br/
 		%p!= @project.body
 		.morebutton3

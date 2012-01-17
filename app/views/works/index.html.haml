@@ -1,0 +1,9 @@
+%h1 Наши работы
+- if admin?
+	= link_to 'New work', new_work_path if admin?
+	%br/
+- @works.each do |work|
+	= link_to(work_path(work), :class=>'rowbottom-work') do
+		= image_tag work.real.url(:thumb), :class => 'proj-img', :alt=>work.info
+		.proj-name= truncate(work.info, :length=>20, :ommission=>'...')
+		.clear

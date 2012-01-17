@@ -24,4 +24,26 @@
 		%br/
 		= f.submit
 	.clear
-	%br/
+%hr/
+%table{:width=>'100%'}
+	%tr
+		%th{:colspan=>5} Стоимость проектов
+	- @project.house_prices.each do |price|
+		%tr
+			%td{:width=>100,:style=>"border-bottom:solid 1px grey;"} Диаметр бревна
+			%td{:width=>30,:style=>"text-align:center;border-bottom:solid 1px grey;"}= price.size
+			%td{:width=>100,:style=>"border-bottom:solid 1px grey;"} Стоимость проекта
+			%td{:width=>30,:style=>"text-align:center;border-bottom:solid 1px grey;"}= price.count
+			%td{:width=>30}
+				= link_to([@project, price], method: :delete) do
+					= image_tag "images/del.png"
+%br/
+= form_for([@project, HousePrice.new]) do |f|
+	= f.label 'диаметр бревна:'
+	= f.number_field :size
+	= f.label 'стоимость проекта:'
+	= f.number_field :count
+	= f.submit 'добавить стоимость', :style => 'float:right'
+	.clear
+%hr/
+%br/

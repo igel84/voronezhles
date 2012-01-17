@@ -1,5 +1,7 @@
 InitialRelease::Application.routes.draw do
 
+  resources :works
+
   mount Ckeditor::Engine => '/ckeditor'
 
 	match 'admin' => "authentication#index"
@@ -12,9 +14,13 @@ InitialRelease::Application.routes.draw do
 	match 'main_image' => "projects#main_image", :as => 'main_image_proj'
 
 	resources :pages
-	resources :projects
+	resources :projects do
+		resources :house_prices
+	end
 
-  root :to => "pages#main"
+  match ':hiperlink' => "pages#show", :as => 'hiperlink'
+
+	root :to => "pages#show", :hiperlink => 'main'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

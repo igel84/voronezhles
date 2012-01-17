@@ -127,12 +127,41 @@ h2 {
 			color: #684125;
 		}
 	}
+	a.rowbottom-work {
+		@include border-radius(25px);
+		display: block;
+		float: left;
+		margin-left: 60px;
+		margin-bottom: 40px;
+		border: solid 1px #fff;
+		width: 180px;
+		height: 180px;
+		padding: 10px;
+		text-decoration: none;
+		&:hover {
+			border: solid 1px lighten(#060, 65%); //#ccc;
+		}
+		img.proj-img {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			//width: 120px;
+			float: none;
+		}
+		.proj-name {
+			padding: 20px 0 5px 0;
+			text-align: center;
+			font-size: 14px;
+			font-weight: bold;
+			color: #38713a;
+		}
+	}
 }
 
 .topmenu{
 	float: right;
-	width: 585px;
-	padding-right: 20px;
+	width: 650px;
+	padding-right: 5px;
 	}
 
 .topmenu ul {

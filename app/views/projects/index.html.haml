@@ -3,9 +3,16 @@
 	= link_to 'New Project', new_project_path if admin?
 	%br/
 - @projects.each do |pr|
-	= link_to(project_path(pr), :class=>'rowbottom') do
-		= image_tag Image.favorite(pr.id).photo.url(:thumb), :class => 'proj-img' if pr.images != [] && Image.favorite(pr.id)
-		= select_tag pr.sizes if pr.house_prices != []
-		.proj-name= truncate(pr.name, :length=>20, :ommission=>'...')
+	.proj-list
+		= link_to(project_path(pr)) do
+			= image_tag Image.favorite(pr.id).photo.url(:thumb), :class => 'proj-img' if pr.images != [] && Image.favorite(pr.id)
+		- if pr.house_prices != []
+			%select.select-price
+				- pr.house_prices.each do |price|
+					%option{:value=>number_to_currency(price.count*7000, :unit=>'руб', :precision=>0, :format=>"%n %u", :delimiter => " ")}= "Диаметр бревна " + price.size.to_s + " мм"
+		.proj-name
+			= link_to truncate(pr.name, :length=>20, :ommission=>'...'), project_path(pr)
 		.proj-info!= pr.info.gsub("\r\n", "<br />")
+		- if pr.house_prices != []
+			.proj-price= number_to_currency(pr.house_prices.first.count*7000, :unit=>'руб', :precision=>0, :format=>"%n %u", :delimiter => " ")
 		.clear

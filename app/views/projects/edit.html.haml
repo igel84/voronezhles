@@ -1,5 +1,14 @@
 %h1 Редактирование проекта
 = render 'form'
+= form_for([@project, HousePrice.new]) do |f|
+	= f.label 'диаметр бревна:'
+	= f.number_field :size
+	= f.label 'стоимость проекта:'
+	= f.text_field :count
+	= f.submit 'добавить стоимость', :style => 'float:right'
+	.clear
+%hr/
+%br/
 #divtoupdate
 	= render 'imagelist'
 = form_tag(add_image_proj_path, :multipart => true, :id => 'myForm' ) do

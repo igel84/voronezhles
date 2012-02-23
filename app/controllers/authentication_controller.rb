@@ -6,7 +6,7 @@ class AuthenticationController < ApplicationController
   end
 
   def login
-    if params[:password] && params[:password] == '111'
+    if params[:password] && params[:password] == 'dtktc7793'
 			cookies['admin'] = 'true'
 	    redirect_to :root
 	  else

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Воронежлес</title>
+  <title><%= @page == nil ? 'Воронеж лес' : @page.head %></title>
   <%= favicon_link_tag 'images/logo.png' %>
   <%= stylesheet_link_tag    "application" %>
   <%= stylesheet_link_tag    params[:controller] %>
@@ -11,8 +11,10 @@
  	<%= javascript_include_tag "/javascripts/jquery.form.js" if admin? %>
  	<%= javascript_include_tag "/javascripts/photo.js" if admin? %>
   <%= csrf_meta_tags %>
-  <meta name="keywords" content="Воронеж оцилиндрованное бревно дома постройка строительство доска производство" />
-	<meta name="description" content="Строительство, производство и продажа домов из оцилиндрованного бревна в Воронеже." />
+  <meta name="robots" content="all">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="keywords" content="Деревянные дома Воронеж срубы оцилиндрованное бревно пиломатериал строительство деревянных домов доска производство" />
+  <meta name="description" content="Строительство, продажа деревянных домов, оцилиндрованное бревно, пиломатериал в Воронеже." />
 </head>
 <body>
 <div id="container">
@@ -24,17 +26,17 @@
 	  </div>
     <div class="topmenu">
       <ul>
-        <li><%= link_to "ГЛАВНАЯ", :root %></li>
-        <li><%= link_to "ПРОЕКТЫ", projects_path %></li>
-        <li><%= link_to "НАШИ РАБОТЫ", works_path %></li>
-        <li><%= link_to "СТРОИТЕЛЬСТВО", construction_path %></li>
-        <li><%= link_to "ЦЕНЫ", Page.find_by_name('price') %></li>
-        <li><%= link_to "КОНТАКТЫ", Page.find_by_name('kontact'), :style=>'background:none' %></li>
+        <li><%= link_to "ГЛАВНАЯ", :root, :title => 'Воронеж лес: о фирме' %></li>
+        <li><%= link_to "ПРОЕКТЫ", projects_path, :title => 'Проекты деревянных домов из оцилиндрованного бревна' %></li>
+        <li><%= link_to "НАШИ РАБОТЫ", works_path, :title => 'Наши работы: жилые и дачные деревянные дома, бани' %></li>
+        <li><%= link_to "СТРОИТЕЛЬСТВО", construction_path, :title => 'Преимущества деревянных домов, срубы, оцилиндрованное бревно, пиломатериал' %></li>
+        <li><%= link_to "ЦЕНЫ", hiperlink_path('price'), :title => 'Прайс-лист пиломатериал, оцилиндрованное бревно' %></li>
+        <li><%= link_to "КОНТАКТЫ", hiperlink_path('kontact'), :style=>'background:none', :title => 'Воронеж лес: контактная информация' %></li>
       </ul>
     </div>
   </div>
   <div id="headersection">
-  	<span>Дома из бревна<br /></span> Имея большой опыт работы с деревом, <strong>мы выполняем полный цикл работ по строительству домов и коттеджей</strong> любых размеров и сложности: от помощи в подборе проекта (или индивидуальном проектировании) до изготовления и сборки комплекта дома и строительства «под ключ».
+  	<span><nobr>Деревянные дома из оцилиндрованного бревна</nobr><br /></span> Имея большой опыт работы с деревом, <strong>мы выполняем полный цикл работ по строительству домов и коттеджей</strong> любых размеров и сложности: от помощи в подборе проекта (или индивидуальном проектировании) до изготовления и сборки комплекта дома и строительства «под ключ».
   </div>
 	<div id="welcomesection">
 		<%= yield %>

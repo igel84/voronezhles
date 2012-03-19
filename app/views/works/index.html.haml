@@ -9,7 +9,7 @@
 			.proj-name= work.info
 			.clear
 	-else
-		= link_to(work.real.url, :class=>'rowbottom-work', :target=>'blank', :alt=>work.info) do
-			= image_tag work.real.url(:thumb), :class => 'proj-img'
+		= link_to(work.real.url, :class=>'rowbottom-work', :target=>'blank', :title=>"#{work.info}") do
+			= image_tag work.real.url(:thumb), :class => 'proj-img', :alt=>"Деревянный дом: #{work.info}"
 			.proj-name= work.info
 			.clear

@@ -90,6 +90,20 @@ h2 {
 			padding-bottom: 5px;
 		}
 	}
+	ul.main-text {
+		margin: 10px 0 10px 0;
+		li {
+			line-height: 32px;
+			font-size: 12px;
+			list-style: none;
+			color: lighten(#684125, 5%);
+
+			a {
+				padding: 10px 5px 5px 40px;
+				&:hover { padding: 10px 5px 5px 50px; }
+			}
+		}
+	}
 	.proj-list {
 		@include border-radius(25px);
 		display: block;

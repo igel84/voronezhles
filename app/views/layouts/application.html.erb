@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= @page == nil ? 'Воронеж лес' : @page.head %></title>
+  <title>
+  <%- if controller_name=='projects' %>
+  	<%= 'Деревянные дома: проекты домов из оцилиндрованного бревна' %>
+  <%- elsif controller_name=='works' %>
+  	<%= 'Деревянные дома: построенные дома "Воронеж лес"' %>
+  <%- elsif controller_name=='pages' and @page %>
+	  <%= @page.head %>
+	<%- elsif controller_name=='pages' and @page==nil %>
+	  <%= 'Воронеж лес: статьи' %>
+  <% end %>
+  </title>
   <%= favicon_link_tag 'images/logo.png' %>
   <%= stylesheet_link_tag    "application" %>
   <%= stylesheet_link_tag    params[:controller] %>
@@ -13,8 +23,19 @@
   <%= csrf_meta_tags %>
   <meta name="robots" content="all">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="keywords" content="Деревянные дома Воронеж срубы оцилиндрованное бревно пиломатериал строительство деревянных домов доска производство" />
-  <meta name="description" content="Строительство, продажа деревянных домов, оцилиндрованное бревно, пиломатериал в Воронеже." />
+  <%- if controller_name=='projects' %>
+  	<meta name="keywords" content="Деревянные дома бани проекты оцилиндрованное бревно Воронеж" />
+  	<meta name="description" content="Проекты деревянных домов и бань из оцилиндрованного бревна" />
+  <%- elsif controller_name=='works' %>
+  	<meta name="keywords" content="Деревянные дома бани готовые оцилиндрованное бревно Воронеж" />
+  	<meta name="description" content="Примеры построенных деревянных домов и бань из оцилиндрованного бревна" />
+  <%- elsif controller_name=='pages' and @page and @page.name=='price' %>
+  	<meta name="keywords" content="Пиломатериал оцилиндрованное бревно доска брус Воронеж" />
+  	<meta name="description" content="Прайс на пиломатериал: оцилиндрованное бревно, доска, брус" />
+  <%- else %>
+  	<meta name="keywords" content="Деревянные дома Воронеж срубы оцилиндрованное бревно пиломатериал строительство деревянных домов доска производство" />
+  	<meta name="description" content="Строительство, продажа деревянных домов, оцилиндрованное бревно, пиломатериал в Воронеже." />
+  <% end %>
 </head>
 <body>
 <div id="container">
@@ -27,10 +48,10 @@
     <div class="topmenu">
       <ul>
         <li><%= link_to "ГЛАВНАЯ", :root, :title => 'Воронеж лес: о фирме' %></li>
-        <li><%= link_to "ПРОЕКТЫ", projects_path, :title => 'Проекты деревянных домов из оцилиндрованного бревна' %></li>
+        <li><%= link_to "ПРОЕКТЫ", projects_path, :title => 'Деревянные дома: проекты домов из оцилиндрованного бревна' %></li>
         <li><%= link_to "НАШИ РАБОТЫ", works_path, :title => 'Наши работы: жилые и дачные деревянные дома, бани' %></li>
-        <li><%= link_to "СТРОИТЕЛЬСТВО", construction_path, :title => 'Преимущества деревянных домов, срубы, оцилиндрованное бревно, пиломатериал' %></li>
-        <li><%= link_to "ЦЕНЫ", hiperlink_path('price'), :title => 'Прайс-лист пиломатериал, оцилиндрованное бревно' %></li>
+        <li><%= link_to "СТРОИТЕЛЬСТВО", construction_path, :title => 'Дома из дерева: подробно о стоительстве , срубы, оцилиндрованное бревно, пиломатериал' %></li>
+        <li><%= link_to "ЦЕНЫ", hiperlink_path('price'), :title => 'Пиломатериал: прайс-лист на пиломатериалы, доску, оцилиндрованное бревно' %></li>
         <li><%= link_to "КОНТАКТЫ", hiperlink_path('kontact'), :style=>'background:none', :title => 'Воронеж лес: контактная информация' %></li>
       </ul>
     </div>

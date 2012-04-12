@@ -8,7 +8,8 @@ InitialRelease::Application.routes.draw do
   match 'login' => "authentication#login"
   match 'logout' => "authentication#logout"
 
-	match 'construction' => "pages#index", :as => 'construction'
+	match 'construction' => "pages#show", :as => 'construction', :hiperlink => 'etap'
+	#match 'construction' => "pages#index", :as => 'construction'
 	match 'add_image' => "projects#add_image", :as => 'add_image_proj'
 	match 'del_image' => "projects#del_image", :as => 'del_image_proj'
 	match 'main_image' => "projects#main_image", :as => 'main_image_proj'

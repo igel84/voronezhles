@@ -79,6 +79,17 @@ h2 {
 				//border-bottom: solid 1px #585858;
 			}
 		}
+		a.inline-link {
+			color: #060;
+			font-weight: bold;
+			text-decoration: none;
+			background: none;
+			padding-left: 0;
+			&:hover {
+				padding-left: 0;
+				color: #c00;
+			}
+		}
 	}
 	ul.info-text {
 		margin: 10px 0 10px 0;
@@ -88,6 +99,20 @@ h2 {
 			list-style: square;
 			color: lighten(#684125, 5%);
 			padding-bottom: 5px;
+		}
+	}
+	ul.main-text {
+		margin: 10px 0 10px 0;
+		li {
+			line-height: 32px;
+			font-size: 12px;
+			list-style: none;
+			color: lighten(#684125, 5%);
+
+			a {
+				padding: 10px 5px 5px 40px;
+				&:hover { padding: 10px 5px 5px 50px; }
+			}
 		}
 	}
 	.proj-list {
@@ -258,6 +283,7 @@ h2 {
 #headersection span {
 	font-size: 18px;
 	font-weight: bold;
+    nobr { margin-left: -10px; }
 	}
 
 #welcomesection {

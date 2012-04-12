@@ -64,7 +64,7 @@
 			//добавление полного пути к картинкам
 			$(this).children().each(function(n){
 				hrefImg = $(this).children().attr('href');
-				$(this).append('<span class="hrefImage">'+hrefImg+'</span>');
+				$(this).append('<span class="hrefImage">'+hrefImg+'</span>')
 			});
 
 			el.curImage = 0;

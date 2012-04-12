@@ -14,7 +14,11 @@
 	<div class="field">
     <%= f.label "Visible in list" %><%= f.check_box :visible %>
   </div>
-  <div class="field">
+    <div class="field">
+      <%= f.label :head %><br />
+      <%= f.text_field :head, :style=>"width:785px" %>
+    </div>
+    <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name, :style=>"width:785px" %>
   </div>

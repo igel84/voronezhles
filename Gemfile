@@ -17,10 +17,10 @@ gem 'coffee-rails', '~> 3.1.1'
 gem 'uglifier', '>= 1.0.3'
 gem "compass", "~> 0.12.alpha.0"
 
-gem 'jquery-rails'
+gem 'jquery-rails', "1.0.17"
 #gem "ckeditor", "3.7.0.rc1"
 gem "ckeditor", :git => "git://github.com/galetahub/ckeditor.git"
-gem "paperclip"
+gem "paperclip", "2.4.5"
 gem 'haml'
 
 # To use ActiveModel has_secure_password
@@ -29,12 +29,12 @@ gem 'haml'
 # Use unicorn as the web server
 gem 'unicorn'
 
-#gem 'mongrel', '1.2.0.pre2'
+gem 'mongrel', '1.2.0.pre2'
 
 # Deploy with Capistrano
 gem 'capistrano'
 gem 'russian', '0.6.0'
-gem 'thin'
+#gem 'thin'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
@@ -42,3 +42,5 @@ group :test do
   # Pretty printed test output
   gem 'turn', :require => false
 end
+#gem 'psych'
+#gem "eventmachine", "1.0.0.beta.4.1"

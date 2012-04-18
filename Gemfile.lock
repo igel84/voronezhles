@@ -1,10 +1,10 @@
 GIT
   remote: git://github.com/galetahub/ckeditor.git
-  revision: 6d8c66bf555c30ad79b918090a0b8d4ea316bafb
+  revision: 34ee3f32c34d60e0e5d53f41e7b54bad2959f675
   specs:
-    ckeditor (3.7.0.rc1)
-      mime-types (~> 1.16)
-      orm_adapter (~> 0.0.5)
+    ckeditor (3.7.0.rc3)
+      mime-types (~> 1.17.2)
+      orm_adapter (~> 0.0.6)
 
 GEM
   remote: http://rubygems.org/
@@ -37,10 +37,10 @@ GEM
       activesupport (= 3.1.1)
     activesupport (3.1.1)
       multi_json (~> 1.0)
-    ansi (1.4.1)
-    arel (2.2.1)
+    ansi (1.4.2)
+    arel (2.2.3)
     builder (3.0.0)
-    capistrano (2.9.0)
+    capistrano (2.12.0)
       highline
       net-scp (>= 1.0.0)
       net-sftp (>= 2.0.0)
@@ -54,33 +54,36 @@ GEM
     coffee-script (2.2.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.2.0)
-    compass (0.12.alpha.4)
+    coffee-script-source (1.3.1)
+    compass (0.12.1)
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
       sass (~> 3.1)
-    daemons (1.1.5)
+    daemons (1.0.10)
     erubis (2.7.0)
-    eventmachine (0.12.10)
-    execjs (1.2.13)
+    execjs (1.3.0)
       multi_json (~> 1.0)
-    fssm (0.2.8.1)
+    fssm (0.2.9)
+    gem_plugin (0.2.3)
     haml (3.1.4)
-    highline (1.6.9)
+    highline (1.6.11)
     hike (1.2.1)
     i18n (0.6.0)
-    jquery-rails (1.0.19)
+    jquery-rails (1.0.17)
       railties (~> 3.0)
       thor (~> 0.14)
-    json (1.6.4)
-    kgio (2.7.2)
+    json (1.6.6)
+    kgio (2.7.4)
     libv8 (3.3.10.4)
-    mail (2.3.0)
+    mail (2.3.3)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.17.2)
-    multi_json (1.0.4)
+    mongrel (1.2.0.pre2)
+      daemons (~> 1.0.10)
+      gem_plugin (~> 0.2.3)
+    multi_json (1.2.0)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-sftp (2.0.5)
@@ -88,7 +91,7 @@ GEM
     net-ssh (2.3.0)
     net-ssh-gateway (1.1.0)
       net-ssh (>= 1.99.1)
-    orm_adapter (0.0.6)
+    orm_adapter (0.0.7)
     paperclip (2.4.5)
       activerecord (>= 2.3.0)
       activesupport (>= 2.3.2)
@@ -96,7 +99,7 @@ GEM
       mime-types
     polyglot (0.3.3)
     rack (1.3.6)
-    rack-cache (1.1)
+    rack-cache (1.2)
       rack (>= 0.4)
     rack-mount (0.8.3)
       rack (>= 1.0.0)
@@ -125,38 +128,34 @@ GEM
       json (~> 1.4)
     russian (0.6.0)
       i18n (>= 0.5.0)
-    sass (3.1.12)
-    sass-rails (3.1.5)
+    sass (3.1.15)
+    sass-rails (3.1.6)
       actionpack (~> 3.1.0)
       railties (~> 3.1.0)
-      sass (~> 3.1.10)
+      sass (>= 3.1.10)
       tilt (~> 1.3.2)
     sprockets (2.0.3)
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.5)
-    therubyracer (0.9.9)
+    therubyracer (0.10.1)
       libv8 (~> 3.3.10)
-    thin (1.3.1)
-      daemons (>= 1.0.9)
-      eventmachine (>= 0.12.6)
-      rack (>= 1.0.0)
     thor (0.14.6)
     tilt (1.3.3)
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
-    turn (0.8.3)
+    turn (0.9.4)
       ansi
-    tzinfo (0.3.31)
-    uglifier (1.2.1)
+    tzinfo (0.3.33)
+    uglifier (1.2.4)
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
-    unicorn (4.1.1)
-      kgio (~> 2.4)
+    unicorn (4.2.1)
+      kgio (~> 2.6)
       rack
-      raindrops (~> 0.6)
+      raindrops (~> 0.7)
 
 PLATFORMS
   ruby
@@ -168,14 +167,14 @@ DEPENDENCIES
   compass (~> 0.12.alpha.0)
   execjs
   haml
-  jquery-rails
-  paperclip
+  jquery-rails (= 1.0.17)
+  mongrel (= 1.2.0.pre2)
+  paperclip (= 2.4.5)
   rails (= 3.1.1)
   russian (= 0.6.0)
   sass-rails (~> 3.1.4)
   sqlite3
   therubyracer
-  thin
   turn
   uglifier (>= 1.0.3)
   unicorn

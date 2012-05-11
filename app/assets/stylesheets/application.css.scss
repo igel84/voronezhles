@@ -4,8 +4,8 @@
 	*= require tinyTips
 */
 
-//@import "partials/mixins";
-@import "compass";
+@import "partials/mixins";
+//@import "compass";
 //@import "compass/css3.sass";
 //@import "compass/utilities";
 //@import "compass/reset.scss";
@@ -117,6 +117,7 @@ h2 {
 		}
 	}
 	.proj-list {
+		//@include rounded-corners(25px);
 		@include border-radius(25px);
 		display: block;
 		float: left;

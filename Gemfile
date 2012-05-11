@@ -15,7 +15,7 @@ gem 'therubyracer'
 gem 'sass-rails',   '3.1.4'
 gem 'coffee-rails', '~> 3.1.1'
 gem 'uglifier', '>= 1.0.3'
-gem "compass", "~> 0.12.alpha.0"
+#gem "compass", "~> 0.12.alpha.0"
 
 gem 'jquery-rails', "1.0.17"
 #gem "ckeditor", "3.7.0.rc1"

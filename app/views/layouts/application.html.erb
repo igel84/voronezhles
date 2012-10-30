@@ -3,41 +3,41 @@
 <head>
   <title>
   <%- if controller_name=='projects' %>
-  	<%= 'Деревянные дома: проекты домов из оцилиндрованного бревна' %>
+    <%= 'Деревянные дома: проекты домов из оцилиндрованного бревна' %>
   <%- elsif controller_name=='works' %>
-  	<%= 'Деревянные дома: построенные дома "Воронеж лес"' %>
+    <%= 'Деревянные дома: построенные дома "Воронеж лес"' %>
   <%- elsif controller_name=='pages' and @page %>
-	  <%= @page.head %>
-	<%- elsif controller_name=='pages' and @page==nil %>
-	  <%= 'Воронеж лес: статьи' %>
+    <%= @page.head %>
+  <%- elsif controller_name=='pages' and @page==nil %>
+    <%= 'Воронеж лес: статьи' %>
   <% end %>
   </title>
   <%= favicon_link_tag 'images/logo.png' %>
   <%= stylesheet_link_tag    "application" %>
   <%= stylesheet_link_tag    params[:controller] %>
- 	<%= javascript_include_tag "application" %>
- 	<%= javascript_include_tag params[:controller] %>
- 	<%= javascript_include_tag "/javascripts/ckeditor/ckeditor.js" if admin? %>
- 	<%= javascript_include_tag "/javascripts/jquery.form.js" if admin? %>
- 	<%= javascript_include_tag "/javascripts/photo.js" if admin? %>
+  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag params[:controller] %>
+  <%= javascript_include_tag "/javascripts/ckeditor/ckeditor.js" if admin? %>
+  <%= javascript_include_tag "/javascripts/jquery.form.js" if admin? %>
+  <%= javascript_include_tag "/javascripts/photo.js" if admin? %>
   <%= csrf_meta_tags %>
   <meta name="robots" content="all">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <%- if controller_name=='projects' %>
-  	<meta name="keywords" content="Деревянные дома бани проекты оцилиндрованное бревно Воронеж" />
-  	<meta name="description" content="Проекты деревянных домов и бань из оцилиндрованного бревна в Воронеже" />
+    <meta name="keywords" content="Деревянные дома бани проекты оцилиндрованное бревно Воронеж" />
+    <meta name="description" content="Проекты деревянных домов и бань из оцилиндрованного бревна в Воронеже" />
   <%- elsif controller_name=='works' %>
-  	<meta name="keywords" content="Деревянные дома бани готовые оцилиндрованное бревно Воронеж" />
-  	<meta name="description" content="Примеры построенных деревянных домов и бань из оцилиндрованного бревна в Воронеже" />
+    <meta name="keywords" content="Деревянные дома бани готовые оцилиндрованное бревно Воронеж" />
+    <meta name="description" content="Примеры построенных деревянных домов и бань из оцилиндрованного бревна в Воронеже" />
   <%- elsif controller_name=='pages' and @page and @page.name=='price' %>
-  	<meta name="keywords" content="Пиломатериал обрезная доска необрезная доска строительная доска оцилиндрованное бревно брус Воронеж" />
-  	<meta name="description" content="Прайс на пиломатериал: обрезная доска необрезная доска, строительная доска, оцилиндрованное бревно, брус в Воронеже" />
+    <meta name="keywords" content="Пиломатериал обрезная доска необрезная доска строительная доска оцилиндрованное бревно брус Воронеж" />
+    <meta name="description" content="Прайс на пиломатериал: обрезная доска необрезная доска, строительная доска, оцилиндрованное бревно, брус в Воронеже" />
   <%- elsif controller_name=='pages' and @page and @page.name=='doska' %>
-  	<meta name="keywords" content="Пиломатериал обрезная доска необрезная доска столярная доска строительная доска Воронеж" />
-  	<meta name="description" content="Пиломатериал, обрезная доска, необрезная доска, строительная доска, столярная доска в Воронеже" />
+    <meta name="keywords" content="Пиломатериал обрезная доска необрезная доска столярная доска строительная доска Воронеж" />
+    <meta name="description" content="Пиломатериал, обрезная доска, необрезная доска, строительная доска, столярная доска в Воронеже" />
   <%- else %>
-  	<meta name="keywords" content="Деревянные дома Воронеж срубы оцилиндрованное бревно пиломатериал строительство деревянных домов доска производство" />
-  	<meta name="description" content="Строительство, продажа деревянных домов, оцилиндрованное бревно, пиломатериал в Воронеже." />
+    <meta name="keywords" content="Деревянные дома Воронеж срубы оцилиндрованное бревно пиломатериал строительство деревянных домов доска производство" />
+    <meta name="description" content="Строительство, продажа деревянных домов, оцилиндрованное бревно, пиломатериал в Воронеже." />
   <% end %>
 </head>
 <body>
@@ -45,9 +45,9 @@
   <div id="top_section">
     <div style="float:left;padding:15px;">
     <% if admin? %>
-	     <%= link_to "выйти", :logout, :style=>"color:#fff;background: none;" %>
-	  <% end %>
-	  </div>
+       <%= link_to "выйти", :logout, :style=>"color:#fff;background: none;" %>
+    <% end %>
+    </div>
     <div class="topmenu">
       <ul>
         <li><%= link_to "ГЛАВНАЯ", :root, :title => 'Воронеж лес: о фирме' %></li>
@@ -60,10 +60,10 @@
     </div>
   </div>
   <div id="headersection">
-  	<span><nobr>Деревянные дома из оцилиндрованного бревна</nobr><br /></span> Имея большой опыт работы с деревом, <strong>мы выполняем полный цикл работ по строительству домов и коттеджей</strong> любых размеров и сложности: от помощи в подборе проекта (или индивидуальном проектировании) до изготовления и сборки комплекта дома и строительства «под ключ».
+    <span><nobr>Деревянные дома из оцилиндрованного бревна</nobr><br /></span> Имея большой опыт работы с деревом, <strong>мы выполняем полный цикл работ по строительству домов и коттеджей</strong> любых размеров и сложности: от помощи в подборе проекта (или индивидуальном проектировании) до изготовления и сборки комплекта дома и строительства «под ключ».
   </div>
-	<div id="welcomesection">
-		<%= yield %>
+  <div id="welcomesection">
+    <%= yield %>
     <%- if controller_name=="pages" && @page.name=="main" %>
       <h3 style="color:#060;text-align:center;margin:20px auto;border-bottom: solid 1px;padding-bottom:10px;">Новые проекты деревянных домов из оцилиндрованного бревна</h3>
       <div style="width:760px;height:160px;margin:5px auto;">
@@ -90,8 +90,8 @@
     <h2 style="background:url(assets/images/header3.jpg) top left no-repeat;;text-size:16px;line-height:14px;width:180px;float:right;margin-top:10px;"><a href="/construction" title="пиломатериалы, доска обрезная, доска необрезная, деревянные дома, оцилиндрованное бревно ...">Все статьи</a></h2> 
 
     <% end %>
-	</div>
-  <div id="footersection"> © 2012 <a href="/kontact" title="Воронеж лес: контактная информация">Воронеж Лес</a> | Сайт разработан <a href="http://yuliansait.ru">юлиансайт</a></div>
+  </div>
+  <div id="footersection"> © 2012 <a href="/kontact" title="Воронеж лес: контактная информация">Воронеж Лес</a> | Сайт разработан <a href="http://mlip.ru" title="создание и раскрутка сайтов в воронеже">ARTLevelDesign</a></div>
 </div>
   <!-- Yandex.Metrika counter -->
   <div style="display:hidden">
